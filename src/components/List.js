@@ -1,15 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export default class List extends Component {
-  constructor(props){
-    super(props)
-  }
-  render(){
-    const list = this.props.emails.map((f,index) => (
-      <li key={index}>{f}</li>
-    ));
-   
-  return (
+const List = (props) => (
+
     <article className="media">
       <div className="field is-horizontal">
         <div className="box">
@@ -17,11 +9,14 @@ export default class List extends Component {
             <div className="content">
               <h1>List</h1>
             </div>
-              <ul>{list}</ul>
+              <ul>{props.emails.map((f,index) => (
+                  <li key={index}>{f}</li>
+                  ))}
+              </ul>
           </div>
         </div>
       </div>
-    </article>
-  )
-}
-}
+    </article>  
+)
+
+export default List

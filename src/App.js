@@ -23,7 +23,7 @@ class App extends Component {
           <div className="container">
             <div className="columns">
               <div className="column">
-                <Form addEmail={this.addNewEmail}/>
+                <Form addEmail={this.addNewEmail} emails={this.state.emails}/>
               </div>
               <div className="column">
                 <List emails={this.state.emails}/>
